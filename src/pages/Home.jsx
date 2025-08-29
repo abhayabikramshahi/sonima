@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from 'react-helmet-async';
 import profileImg from "../assets/profile.jpg";
 import { Link } from "react-router-dom";
 
