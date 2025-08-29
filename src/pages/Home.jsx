@@ -6,15 +6,6 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
-      <Helmet>
-        <title>Sonima Pokhrel | Portfolio</title>
-        <meta name="description" content="Sonima Pokhrel — passionate web designer, C++/PHP programmer, and National Robotics Competition winner. Explore my projects, skills, and achievements." />
-        <meta property="og:title" content="Sonima Pokhrel | Portfolio" />
-        <meta property="og:description" content="Sonima Pokhrel — passionate web designer, C++/PHP programmer, and National Robotics Competition winner." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://sonimapokhrelcoder.github.io/sonima.portflio/profile.jpg" />
-        <meta property="og:url" content="https://sonimapokhrelcoder.github.io/sonima.portflio/" />
-      </Helmet>
       <div className="w-full min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center justify-center text-center md:text-left h-screen px-6 gap-10 bg-black">

@@ -19,13 +19,6 @@ const skills = [
 function SkillPage() {
   return (
     <>
-      <Helmet>
-        <title>Skills | Sonima Pokhrel</title>
-        <meta name="description" content="Skills of Sonima Pokhrel: HTML5, CSS3, JavaScript, C++, and more. Explore my technical expertise and experience." />
-        <meta property="og:title" content="Skills | Sonima Pokhrel" />
-        <meta property="og:description" content="Skills of Sonima Pokhrel: HTML5, CSS3, JavaScript, C++, and more." />
-        <meta property="og:type" content="website" />
-      </Helmet>
       <div className="min-h-screen bg-black text-white py-16 px-6">
         <h1 className="text-4xl font-bold text-yellow-400 mb-10 text-center">My Skills</h1>
         <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">

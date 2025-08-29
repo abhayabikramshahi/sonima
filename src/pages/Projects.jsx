@@ -30,13 +30,6 @@ function ProjectsPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Projects | Sonima Pokhrel</title>
-        <meta name="description" content="Explore projects by Sonima Pokhrel, including web apps, automation, and creative solutions. View code, tech stack, and more." />
-        <meta property="og:title" content="Projects | Sonima Pokhrel" />
-        <meta property="og:description" content="Explore projects by Sonima Pokhrel, including web apps, automation, and creative solutions." />
-        <meta property="og:type" content="website" />
-      </Helmet>
       <div className="min-h-screen bg-black text-white py-16 px-6">
         <h1 className="text-4xl font-bold text-yellow-400 mb-10 text-center">My Projects</h1>
         <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
