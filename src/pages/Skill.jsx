@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const skills = [
   { name: 'HTML5', level: 'Advanced', color: 'text-orange-500', icon: (
@@ -17,21 +18,30 @@ const skills = [
 
 function SkillPage() {
   return (
-    <div className="min-h-screen bg-black text-white py-16 px-6">
-      <h1 className="text-4xl font-bold text-yellow-400 mb-10 text-center">My Skills</h1>
-      <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        {skills.map((skill) => (
-          <div
-            key={skill.name}
-            className={`flex flex-col items-center justify-center bg-gray-900 border border-gray-800 rounded-xl p-6 shadow hover:border-yellow-400 transition min-h-[140px] ${skill.color}`}
-          >
-            {skill.icon}
-            <span className="text-2xl font-semibold mb-2 mt-2">{skill.name}</span>
-            <span className="text-gray-400 text-sm">{skill.level}</span>
-          </div>
-        ))}
+    <>
+      <Helmet>
+        <title>Skills | Sonima Pokhrel</title>
+        <meta name="description" content="Skills of Sonima Pokhrel: HTML5, CSS3, JavaScript, C++, and more. Explore my technical expertise and experience." />
+        <meta property="og:title" content="Skills | Sonima Pokhrel" />
+        <meta property="og:description" content="Skills of Sonima Pokhrel: HTML5, CSS3, JavaScript, C++, and more." />
+        <meta property="og:type" content="website" />
+      </Helmet>
+      <div className="min-h-screen bg-black text-white py-16 px-6">
+        <h1 className="text-4xl font-bold text-yellow-400 mb-10 text-center">My Skills</h1>
+        <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {skills.map((skill) => (
+            <div
+              key={skill.name}
+              className={`flex flex-col items-center justify-center bg-gray-900 border border-gray-800 rounded-xl p-6 shadow hover:border-yellow-400 transition min-h-[140px] ${skill.color}`}
+            >
+              {skill.icon}
+              <span className="text-2xl font-semibold mb-2 mt-2">{skill.name}</span>
+              <span className="text-gray-400 text-sm">{skill.level}</span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
