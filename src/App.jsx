@@ -6,16 +6,11 @@ import ProjectsPage from './pages/Projects';
 import SkillPage from './pages/Skill';
 import ContactPage from './pages/Contact';
 import Navbar from './components/Navbar'
-import { Helmet } from 'react-helmet-async';
 
 
 function App() {
   return (
     <BrowserRouter>
-      <Helmet>
-        <title>Sonima Pokhrel | Portfolio</title>
-        <meta name="description" content="Sonima Pokhrel — passionate web designer, C++/PHP programmer, and National Robotics Competition winner. Explore my projects, skills, and achievements." />
-      </Helmet>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
