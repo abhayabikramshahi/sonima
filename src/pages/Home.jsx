@@ -1,100 +1,76 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet"; // ✅ for SEO
-import Hero from "../assets/hero.jpg";
+import Projects from "./Projects";
+import About from "./About";
+import HireMe from "./HireMe";
+import profilePic from "../assets/sonima.jpg"; // ✅ replace with actual image path
 
-const Home = () => {
+function Home() {
   return (
-    <div className="pt-24 px-6 md:px-10 min-h-screen bg-black text-white font-sans">
-      {/* ✅ SEO Meta Tags */}
-      <Helmet>
-        <title>Sonima Pokhrel | Web Developer & CS Student</title>
-        <meta
-          name="description"
-          content="Hello, I’m Sonima Pokhrel 👋 A Web Developer, Computer Science major, and Class 12 student from Orchid College. Passionate about building sleek, optimized, and creative digital experiences."
-        />
-        <meta
-          name="keywords"
-          content="Sonima Pokhrel, Web Developer, CS Student, Orchid College, React Developer, Portfolio"
-        />
-        <meta name="author" content="Sonima Pokhrel" />
-        <meta property="og:title" content="Sonima Pokhrel | Web Developer" />
-        <meta
-          property="og:description"
-          content="Portfolio of Sonima Pokhrel, a passionate Web Developer and Computer Science student from Orchid College."
-        />
-        <meta property="og:image" content={Hero} />
-        <meta property="og:type" content="website" />
-      </Helmet>
+    <>
+      {/* Hero Section */}
+  <section className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-white text-black px-2 sm:px-8 md:px-32 py-12 md:py-0 mt-24 md:mt-0">
+        {/* Left Side: Text */}
+  <div className="flex-1 text-center md:text-left w-full md:w-auto max-w-3xl">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
+            Hi, I'm{" "}
+            <span className="text-green-700">Sonima Pokhrel</span>
+          </h1>
+          <p className="mt-4 text-base sm:text-lg md:text-xl text-green-900">
+            A passionate{" "}
+            <span className="text-green-600 font-semibold">C Developer</span> &{" "}
+            <span className="text-green-600 font-semibold">Web Developer</span>{" "}
+            from Nepal.
+          </p>
+          <p className="mt-2 text-sm sm:text-base md:text-lg text-black">
+            Currently studying in Grade 12 at{" "}
+            <span className="font-semibold text-green-900">
+              Orchid International College
+            </span>.
+          </p>
 
-      <section className="max-w-6xl mx-auto">
-        {/* Top Hero Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-          {/* Left Text */}
-          <div className="flex flex-col items-start space-y-6 max-w-2xl">
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
-              Hello, I’m <span className="text-indigo-400">Sonima Pokhrel</span> 👋
-            </h1>
-
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              I’m a <span className="text-white font-medium">Web developer</span>, 
-              <span className="text-white font-medium"> Computer Science major</span>,
-              and a Class 12 student studying <span className="text-white font-medium">CS</span>.
-              Passionate about building sleek, optimized, and creative digital experiences.
-            </p>
-
-            <p className="text-base md:text-lg text-gray-400">
-              A student from Orchid College.{" "}
-              <a
-                href="https://www.oic.edu.np/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-indigo-400 hover:underline"
-              >
-                Visit College.
-              </a>
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <Link
-                to="/gaurab-ai"
-                className="px-6 py-3 bg-indigo-500 text-white rounded-lg font-medium hover:bg-indigo-600 transition"
-              >
-                Explore Gaurab AI
-              </Link>
-              <Link
-                to="/contact"
-                className="px-6 py-3 border border-indigo-500 text-indigo-400 rounded-lg font-medium hover:bg-indigo-600 hover:text-white transition"
-              >
-                Contact Me
-              </Link>
-            </div>
-          </div>
-
-          {/* Hero Image */}
-          <div className="w-full md:w-1/3 flex justify-center">
-            <img
-              src={Hero}
-              alt="Sonima Pokhrel - Web Developer and CS Student"
-              className="rounded-2xl shadow-2xl w-64 h-64 object-cover hover:scale-105 transition duration-300 ease-in-out"
-              loading="lazy" // ✅ improves SEO & performance
-            />
+          <div className="mt-6 flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start w-full">
+            <a
+              href="#projects"
+              className="px-6 py-3 bg-green-700 text-white rounded-xl shadow hover:bg-green-800 transition"
+            >
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 border border-green-400 text-green-700 rounded-xl hover:bg-green-50 transition"
+            >
+              Hire Me
+            </a>
           </div>
         </div>
 
-        {/* Coming Soon Section */}
-        <section className="mt-24">
-          <h2 className="text-2xl md:text-3xl font-semibold text-white">
-            🔥 Featured Projects Coming Soon
-          </h2>
-          <p className="text-gray-400 mt-2">
-            Stay tuned for some exciting drops — Sonima is cooking up some powerful tools and projects!
-          </p>
-          <p className="mt-4 italic text-gray-500">More to come...</p>
-        </section>
+        {/* Right Side: Image */}
+        <div className="flex-1 mt-12 md:mt-0 flex justify-center w-full">
+          <img
+            src={profilePic}
+            alt="Sonima Pokhrel"
+            className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 object-cover rounded-2xl shadow-xl border-4 border-green-100"
+          />
+        </div>
       </section>
-    </div>
+
+   <div id="about">
+        <About />
+      </div>
+      {/* Projects Section */}
+      <div id="projects">
+        <Projects />
+      </div>
+
+      {/* About Section */}
+   
+
+      {/* Hire Me Section */}
+      <div id="contact">
+        <HireMe />
+      </div>
+    </>
   );
-};
+}
 
 export default Home;
