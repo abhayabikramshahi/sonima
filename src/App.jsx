@@ -6,6 +6,7 @@ import ProjectsPage from './pages/Projects';
 import SkillPage from './pages/Skill';
 import ContactPage from './pages/Contact';
 import Navbar from './components/Navbar'
+import NotFound from './pages/NotFound';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/projects' element={<ProjectsPage />} />
         <Route path='/skill' element={<SkillPage />} />
         <Route path='/contact' element={<ContactPage />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )

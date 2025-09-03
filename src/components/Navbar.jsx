@@ -1,71 +1,93 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const NavItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Projects', path: '/projects' },
-  { name: 'Skills', path: '/skill' },
-  { name: 'Contact', path: '/contact' }, // You can create a Contact page if needed
+const navitems = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Projects", path: "/projects" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const Navbar = () => {
-  const [isOpen, SetIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-  <nav className="w-full bg-black border-b border-gray-800 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <span className="text-2xl font-bold text-yellow-400 tracking-wide drop-shadow-lg">
-              Sonima Pokhrel
-            </span>
-          </div>
+  <header className="fixed top-0 left-0 w-full z-50 bg-black border-b border-gray-700 font-sans transition-all duration-300">
+  <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Logo */}
+        <div className="flex flex-col select-none">
+          <span className="text-2xl md:text-3xl font-extrabold text-white tracking-wide">
+            Sonima <span className="text-indigo-400">Pokhrel</span>
+          </span>
+          <span className="text-xs md:text-sm text-gray-300 font-medium mt-1">
+            Class 12 CS Student, Orchid College
+          </span>
+        </div>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-8">
-            {NavItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className="text-gray-200 hover:text-yellow-400 px-3 py-2 rounded-md font-medium transition"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => SetIsOpen(!isOpen)}
-              type="button"
-              className="bg-black rounded-full text-white px-3 py-2 cursor-pointer focus:outline-none"
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex gap-8 text-lg font-semibold tracking-tight text-gray-300">
+          {navitems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className="relative group transition-all duration-300 hover:text-indigo-400"
             >
-              {isOpen ? "Close ✖" : "Menu 💖"}
-            </button>
-          </div>
+              {item.name}
+              <span className="block h-[3px] max-w-0 group-hover:max-w-full transition-all duration-300 bg-indigo-500 rounded-full"></span>
+            </Link>
+          ))}
+        </nav>
+
+        {/* Hamburger (Mobile) */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-gray-300 focus:outline-none"
+            aria-label="Toggle navigation menu"
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              {isOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden bg-black border-t border-gray-800 shadow-lg">
-          <div className="flex flex-col space-y-2 p-4">
-            {NavItems.map((item) => (
+        <div className="md:hidden bg-black text-gray-300 px-6 pb-6 pt-2 shadow-lg border-t border-gray-700">
+          <nav className="flex flex-col gap-4 text-xl font-medium">
+            {navitems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                onClick={() => SetIsOpen(false)} // auto-close when clicking
-                className="text-gray-200 hover:text-yellow-400 px-3 py-2 rounded-md font-medium transition"
+                onClick={() => setIsOpen(false)}
+                className="hover:text-indigo-400 transition"
               >
                 {item.name}
               </Link>
             ))}
-          </div>
+          </nav>
         </div>
       )}
-    </nav>
+    </header>
   );
 };
 

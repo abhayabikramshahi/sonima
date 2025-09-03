@@ -1,85 +1,99 @@
 import React from "react";
-import profileImg from "../assets/profile.jpg";
 import { Link } from "react-router-dom";
-
+import { Helmet } from "react-helmet"; // ✅ for SEO
+import Hero from "../assets/hero.jpg";
 
 const Home = () => {
   return (
-    <>
-      <div className="w-full min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center justify-center text-center md:text-left h-screen px-6 gap-10 bg-black">
-        <div className="flex flex-col items-center md:items-start flex-1">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-white">
-            Hi, I’m <span className="text-yellow-400">Sonima Pokhrel</span> 👋
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mb-6">
-            A passionate <span className="font-semibold text-white">Web Developer</span> &{" "}
-            <span className="font-semibold text-white">Designer</span> who loves building
-            clean, modern, and user-friendly digital experiences.
-          </p>
-          <div className="flex gap-4">
-            <Link
-              to="#projects"
-              className="bg-yellow-400 text-black px-5 py-3 rounded-xl shadow hover:bg-yellow-500 transition font-semibold"
-            >
-              View Projects
-            </Link>
-            <Link
-              to="#contact"
-              className="border border-yellow-400 text-yellow-400 px-5 py-3 rounded-xl hover:bg-yellow-400 hover:text-black transition font-semibold"
-            >
-              Contact Me
-            </Link>
-          </div>
-        </div>
-        <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0">
-          <img
-            src={profileImg}
-            alt="Sonima Pokhrel profile"
-            className="w-48 h-48 md:w-64 md:h-64 rounded-xl object-cover shadow-2xl border-4 border-yellow-400 md:mr-16 bg-gray-900"
-          />
-        </div>
-      </section>
+    <div className="pt-24 px-6 md:px-10 min-h-screen bg-black text-white font-sans">
+      {/* ✅ SEO Meta Tags */}
+      <Helmet>
+        <title>Sonima Pokhrel | Web Developer & CS Student</title>
+        <meta
+          name="description"
+          content="Hello, I’m Sonima Pokhrel 👋 A Web Developer, Computer Science major, and Class 12 student from Orchid College. Passionate about building sleek, optimized, and creative digital experiences."
+        />
+        <meta
+          name="keywords"
+          content="Sonima Pokhrel, Web Developer, CS Student, Orchid College, React Developer, Portfolio"
+        />
+        <meta name="author" content="Sonima Pokhrel" />
+        <meta property="og:title" content="Sonima Pokhrel | Web Developer" />
+        <meta
+          property="og:description"
+          content="Portfolio of Sonima Pokhrel, a passionate Web Developer and Computer Science student from Orchid College."
+        />
+        <meta property="og:image" content={Hero} />
+        <meta property="og:type" content="website" />
+      </Helmet>
 
-      {/* About Preview */}
-      <section id="about" className="py-16 px-6 bg-gray-900 text-center">
-        <h2 className="text-3xl font-bold mb-6">About Me</h2>
-        <div className="max-w-3xl mx-auto text-gray-300">
-          <p>
-            Hi! I’m Sonima Pokharel — a passionate web designer and C++/PHP programmer. I won the National Robotics Competition and am working toward my dream of becoming a software engineer. I love designing and building creative solutions!
-          </p>
-          <div className="mt-6">
-            <h3 className="text-xl font-semibold text-yellow-400 mb-2">Education & Achievements</h3>
-            <p>
-              I completed my +2 and earned a certificate by winning the National Robotics Competition. This event motivated me to dive deeper into technology.
+      <section className="max-w-6xl mx-auto">
+        {/* Top Hero Section */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+          {/* Left Text */}
+          <div className="flex flex-col items-start space-y-6 max-w-2xl">
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+              Hello, I’m <span className="text-indigo-400">Sonima Pokhrel</span> 👋
+            </h1>
+
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+              I’m a <span className="text-white font-medium">Web developer</span>, 
+              <span className="text-white font-medium"> Computer Science major</span>,
+              and a Class 12 student studying <span className="text-white font-medium">CS</span>.
+              Passionate about building sleek, optimized, and creative digital experiences.
             </p>
+
+            <p className="text-base md:text-lg text-gray-400">
+              A student from Orchid College.{" "}
+              <a
+                href="https://www.oic.edu.np/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-indigo-400 hover:underline"
+              >
+                Visit College.
+              </a>
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <Link
+                to="/gaurab-ai"
+                className="px-6 py-3 bg-indigo-500 text-white rounded-lg font-medium hover:bg-indigo-600 transition"
+              >
+                Explore Gaurab AI
+              </Link>
+              <Link
+                to="/contact"
+                className="px-6 py-3 border border-indigo-500 text-indigo-400 rounded-lg font-medium hover:bg-indigo-600 hover:text-white transition"
+              >
+                Contact Me
+              </Link>
+            </div>
+          </div>
+
+          {/* Hero Image */}
+          <div className="w-full md:w-1/3 flex justify-center">
+            <img
+              src={Hero}
+              alt="Sonima Pokhrel - Web Developer and CS Student"
+              className="rounded-2xl shadow-2xl w-64 h-64 object-cover hover:scale-105 transition duration-300 ease-in-out"
+              loading="lazy" // ✅ improves SEO & performance
+            />
           </div>
         </div>
-      </section>
 
-
-
-
-
-      {/* Contact */}
-      <section
-        id="contact"
-        className="py-16 px-6 bg-black text-white text-center border-t border-gray-800"
-      >
-        <h2 className="text-3xl font-bold mb-6 text-yellow-400">Let’s Work Together</h2>
-        <p className="text-gray-300 max-w-2xl mx-auto mb-6">
-          Interested in collaborating or just want to say hi? Drop me a message!
-        </p>
-        <Link
-          to="/contact"
-          className="bg-yellow-400 text-black px-6 py-3 rounded-xl shadow hover:bg-yellow-500 transition font-semibold"
-        >
-          Contact Me
-        </Link>
+        {/* Coming Soon Section */}
+        <section className="mt-24">
+          <h2 className="text-2xl md:text-3xl font-semibold text-white">
+            🔥 Featured Projects Coming Soon
+          </h2>
+          <p className="text-gray-400 mt-2">
+            Stay tuned for some exciting drops — Sonima is cooking up some powerful tools and projects!
+          </p>
+          <p className="mt-4 italic text-gray-500">More to come...</p>
+        </section>
       </section>
     </div>
-    </>
   );
 };
 
