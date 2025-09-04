@@ -27,7 +27,7 @@ function About() {
               I am currently studying in{" "}
               <span className="font-semibold">Grade 12</span> at{" "}
               <span className="font-semibold text-gray-900">
-                Orchid International College
+              Orchid College of Science and Management
               </span>
               . My journey in tech started with C programming, and since then,
               I’ve been exploring web development, focusing on modern tools like{" "}
