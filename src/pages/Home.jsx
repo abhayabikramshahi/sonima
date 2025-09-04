@@ -24,7 +24,7 @@ function Home() {
           <p className="mt-2 text-sm sm:text-base md:text-lg text-black">
             Currently studying in Grade 12 at{" "}
             <span className="font-semibold text-green-900">
-              Orchid College of Science and Management
+              Orchid College of Science and Management .
             </span>.
           </p>
 
